@@ -20,7 +20,7 @@ const NavBar = () => {
   }
   const handleSelectedLink=( index:LinkType)=>{
   
-    setSelecteLink(index)
+    setSelecteLink(index.index);
   }
   const menuItem=[
     {label:"Dashboard",link:"/"},
