@@ -32,14 +32,33 @@ const NavBar = () => {
   ]
   console.log(selectedLink)
   return (
-    <div style={{width:"20%",background:"#3F3F46",height:"100vh",textAlign:"center"}}>
-<ul style={{paddingTop:"29%",color:"white"}}>
-{menuItem.map((item,index)=>(
-  <li  style={{padding:"8%",background:(isHover===index||selectedLink===index)?"#71717a":"",transition:"1s"}} key={index} onMouseEnter={()=>handleHoverOpen({index})} onMouseLeave={handleHoverClose} onClick={()=>handleSelectedLink( index)}><Link href={item.link}>{item.label}</Link></li>
-))  
-}
-</ul>
+    <div
+      style={{
+        width: "20%",
+        background: "#3F3F46",
+        height: "100vh",
+        textAlign: "center",
+      }}
+    >
+      <ul style={{ paddingTop: "29%", color: "white" }}>
+        {menuItem.map((item, index) => (
+          <li
+            style={{
+              padding: "8%",
+              background:
+                isHover === index || selectedLink === index ? "#71717a" : "",
+              transition: "1s",
+            }}
+            key={index}
+            onMouseEnter={() => handleHoverOpen({ index })}
+            onMouseLeave={handleHoverClose}
+            onClick={() => handleSelectedLink({ index })}
+          >
+            <Link href={item.link}>{item.label}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 export default NavBar
