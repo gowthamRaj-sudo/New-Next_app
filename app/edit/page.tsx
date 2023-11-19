@@ -9,8 +9,7 @@ import { toast } from 'react-toastify';
 const page = () => {
   const [getAllUsers,setGetAllUsers]=useState([])
 const [userKey, setUserKey] = useState<string[]>([]);
-const [modalOpen, setModalOpen] = useState<
-  | {
+const [modalOpen, setModalOpen] = useState< {
       _id: string;
       name: string;
       password: string;
@@ -41,6 +40,7 @@ interface paramsType{
 }
 const handleSelectedUserDetails=(data:paramsType)=>{
   setModalOpen(data.value);
+  console.log("sdfdfdf",data.value)
 }
 const handleInputChange=(event:ChangeEvent<HTMLInputElement>)=>{
   const {name,value}=event.target;
@@ -58,7 +58,7 @@ const handleInputChange=(event:ChangeEvent<HTMLInputElement>)=>{
   }
  
 }
-// console.log(modalOpen)
+console.log(modalOpen);
 const updateSelectedUserDetails=async()=>{
   try{
     if (modalOpen) {
@@ -156,7 +156,7 @@ const updateSelectedUserDetails=async()=>{
                 {" "}
                 <button
                   className={style.button}
-                  onClick={() => handleSelectedUserDetails(value)}
+                  onClick={() => handleSelectedUserDetails({value})}
                 >
                   Edit
                 </button>
