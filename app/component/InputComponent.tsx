@@ -2,12 +2,12 @@
 import React, { ChangeEvent } from 'react'
 
 interface InputComponentProps {
-  type: string;
+  type?: string;
   value: any;
   onChange: any;
   name: any;
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   email?: boolean;
 }
 interface EventpropsTypes{

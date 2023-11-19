@@ -5,7 +5,7 @@ import { instance } from '../api'
 
 const page = () => {
 const [getAllUsers,setGetAllUsers]=useState([])
-const[userKey,setUserKey]=useState([])
+const [userKey, setUserKey] = useState<string[]>([]);
 const fetchgetAllUserDetails=async()=>{
   try{
     const response=await instance.get(`/users/getAllUsers`)
